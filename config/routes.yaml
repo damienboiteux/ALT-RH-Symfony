@@ -3,3 +3,23 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+marques:
+    path: /marques
+    controller: App\Controller\MarqueController::index
+
+marque_new:
+    path: /marques/new
+    controller: App\Controller\MarqueController::new
+
+# marque_supp:
+#     path: /marques/delete
+#     controller: App\Controller\MarqueController::delete
+
+#marque_show:
+    # path: /marques/show
+    # controller: App\Controller\MarqueController::show

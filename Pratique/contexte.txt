@@ -1,0 +1,60 @@
+Une entreprise souhaite savoir quel véhicule est 
+attribué à quel employé.
+
+Entités :
+- employés
+- véhicules
+
+Relations :
+1 véhicule est attribué à 1 seul employé
+1 employé peut "avoir" 1 seul véhicule
+
+Données (dictionnaire des données) :
+
+Employés :
+- nom
+- prénom
+- service
+
+Véhicules :
+- immatriculation
+- marque
+- modèle
+- kilométrage
+
+MVC
+
+
+Marques :
+Liste, Créer, Modifier, Supprimer, Détails
+
+Employés :
+Liste, Créer, Modifier, Supprimer, Détails
+
+Véhicules :
+Liste, Créer, Modifier, Supprimer, Détails
+
+
+CRUD : Create Read Update Delete
+
+1 Controller pour les marques : MarqueController
+
+localhost/marques                   : liste des marques
+localhost/marques/new               : ajout d'une marque
+localhost/marques/fiat              : détails de la marque fiat
+localhost/marques/fiat/delete       : suppression de la marque fiat
+localhost/marques/fiat/update       : modification de la marque fiat
+
+1 Controller pour les véhicules : VehiculeController
+
+localhost/vehicules                 : index() ( ou liste())
+localhost/vehicules/new             : new() ou add() ou create()  
+localhost/vehicules/12              : show()
+localhost/vehicules/12/delete       : delete() ou remove()
+localhost/vehicules/12/update       : update() ou modify()
+
+
+
+
+
+
