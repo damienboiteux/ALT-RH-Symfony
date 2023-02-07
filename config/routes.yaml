@@ -16,10 +16,21 @@ marque_new:
     path: /marques/new
     controller: App\Controller\MarqueController::new
 
-# marque_supp:
-#     path: /marques/delete
-#     controller: App\Controller\MarqueController::delete
+marque_supp:
+    path: /marques/delete/{slug<[a-z-]{3,32}>?BMW}
+    controller: App\Controller\MarqueController::delete
 
-#marque_show:
-    # path: /marques/show
-    # controller: App\Controller\MarqueController::show
+marque_show:
+    path: /marques/show/{slug}
+    controller: App\Controller\MarqueController::show
+    defaults:
+        slug: BMW
+    requirements:
+        slug: '[a-z-]{3,32}'
+    methods: ['GET', 'POST']
+    # host: api.monsite.com
+    # schemes: ['http','https']
+
+    
+
+

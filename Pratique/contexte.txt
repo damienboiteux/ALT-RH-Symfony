@@ -41,7 +41,11 @@ CRUD : Create Read Update Delete
 
 localhost/marques                   : liste des marques
 localhost/marques/new               : ajout d'une marque
+
 localhost/marques/fiat              : détails de la marque fiat
+localhost/marques/ford              : détails de la marque ford
+localhost/marques/bmw               : détails de la marque bmw
+
 localhost/marques/fiat/delete       : suppression de la marque fiat
 localhost/marques/fiat/update       : modification de la marque fiat
 
@@ -54,7 +58,15 @@ localhost/vehicules/12/delete       : delete() ou remove()
 localhost/vehicules/12/update       : update() ou modify()
 
 
+SLUG
 
+Titre : Le meilleur article sur la pêche
+
+Slug : le-meilleur-article-sur-la-peche
+
+Fiat -> fiat
+Ford -> ford
+Alpha Roméo -> alpha-romeo
 
 
 

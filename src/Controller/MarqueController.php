@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MarqueController
 {
     public function index()
     {
-        dd('Liste des marques');
+        return new Response('<h1>Liste des marques</h1>');
     }
 
     public function new()
@@ -16,21 +18,29 @@ class MarqueController
         dd('Ajout d\'une marque');
     }
 
-    #[Route('/marques/show', name: 'marque_show')]
-    public function show()
+    public function show(Request $req): Response
     {
-        dd('Affichage d\'une marque');
+        $marque = $req->attributes->get('slug');
+        return new Response('Affichage de la marque : ' . $marque);
     }
 
-    #[Route('/marques/delete')]
-    public function delete()
+    public function delete(Request $request): Response
     {
-        dd('Suppression d\'une marque');
+        $marque = $request->attributes->get('slug');
+        return new Response('Suppression de la marque : ' . $marque);
     }
 
-    #[Route('/marques/update')]
-    public function update()
+    // #[Route('/marques/update/{slug}', defaults: ['slug' => 'BMW'], requirements: ['slug' => '[a-z-]{3,32}'], methods: ['GET', 'POST'], name: 'marque_update')]
+
+    // #[Route('/marques/update/{slug}', requirements: ['slug' => '[a-z-]{3,32}'], methods: ['GET', 'POST'], name: 'marque_update')]
+    // public function update(string $slug = 'BMW')
+    // {
+    //     return new Response('Modification de la marque : ' . $slug);
+    // }
+
+    #[Route('/marques/update/{id}', requirements: ['id' => '\d{1,10}'], methods: ['GET', 'POST'], name: 'marque_update')]
+    public function update(int $id = 0)
     {
-        dd('Modification d\'une marque');
+        return new Response('Modification de la marque : ' . $id);
     }
 }
