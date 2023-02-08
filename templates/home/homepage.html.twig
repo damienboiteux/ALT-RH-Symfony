@@ -1,0 +1,25 @@
+<h1>Page d'accueil avec TWIG</h1>
+
+<p>Bienvenue sur ce site !</p>
+
+
+<h2>{{ titre }}</h2>
+
+
+<!-- Commentaire HTML -->
+
+{# Commentaire TWIG #}
+
+<ul>
+{% for ligne in tableau %}
+    <li>{{ ligne }}</li>
+{% endfor %}
+</ul>
+
+
+<p>Nom : {{ personne.nom }}</p>
+<p>Prénom : {{ personne.prenom }}</p>
+
+{% for ligne in personnes %}
+    <li>{{ ligne.login }} / {{ ligne.password}}</li>
+{% endfor %}
