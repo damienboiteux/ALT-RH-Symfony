@@ -14,6 +14,8 @@
                 <tr>
                     <th>#</th>
                     <th>Nom</th>
+                    {# <th>Slug</th> #}
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,10 +23,15 @@
                     <tr>
                         <td>{{ marque.id }}</td>
                         <td>{{ marque.nom }}</td>
+                        {# <td>{{ marque.slug }}</td> #}
+                        <td><a class="btn btn-warning" href="{{ path('marque_modify', {slug: marque.slug }) }}">Modifier</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     {% endif %}
 
+    <a class="btn btn-primary mt-4" href="{{ path('marque_new') }}">Ajouter une marque</a>
+
 {% endblock %}
+

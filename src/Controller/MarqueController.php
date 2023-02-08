@@ -15,11 +15,11 @@ class MarqueController extends AbstractController
     {
 
         $marques = [
-            ['id' => 1, 'nom' => 'Fiat'],
-            ['id' => 2, 'nom' => 'Ford'],
-            ['id' => 3, 'nom' => 'BMW'],
-            ['id' => 4, 'nom' => 'Tesla'],
-            ['id' => 5, 'nom' => 'Audi'],
+            ['id' => 1, 'nom' => 'Fiat', 'slug' => 'fiat'],
+            ['id' => 2, 'nom' => 'Ford', 'slug' => 'ford'],
+            ['id' => 3, 'nom' => 'BMW', 'slug' => 'bmw'],
+            ['id' => 4, 'nom' => 'Tesla', 'slug' => 'tesla'],
+            ['id' => 5, 'nom' => 'Audi', 'slug' => 'audi'],
         ];
 
         return $this->render('marque/liste.html.twig', [
