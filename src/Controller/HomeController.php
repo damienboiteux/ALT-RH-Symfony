@@ -11,6 +11,6 @@ class HomeController
     #[Route('/', name: "home")]
     public function index(): Response
     {
-        return new Response('Page d\'accueil');
+        return new Response('<body><h1>Page d\'accueil</h1></body>');
     }
 }
