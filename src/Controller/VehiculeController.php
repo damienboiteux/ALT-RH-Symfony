@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/vehicules')]
-class VehiculeController
+class VehiculeController extends AbstractController
 {
 
     #[Route('/', name: "vehicule_liste")]
     public function index(): Response
     {
-        return new Response('Liste des véhicules');
+        return $this->render('vehicule/liste.html.twig');
     }
 
     #[Route('/new', name: "vehicule_new")]

@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/marques')]
-class MarqueController
+class MarqueController extends AbstractController
 {
 
     #[Route('/', name: "marque_liste")]
     public function index(): Response
     {
-        return new Response('Liste des marques');
+        return $this->render('marque/liste.html.twig');
     }
 
     #[Route('/new', name: "marque_new")]

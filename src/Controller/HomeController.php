@@ -17,7 +17,7 @@ class HomeController extends AbstractController
 
         $objet = new stdClass();
 
-        $compte = new StdClass();
+        $compte = new stdClass();
         $compte->login = 'tutu';
         $compte->password = 'tutu';
 
@@ -30,7 +30,6 @@ class HomeController extends AbstractController
 
         $objet->nom = "Dupont";
         $objet->prenom = "Paul";
-        dump($objet);
 
         return $this->render(
             'home/homepage.html.twig',
@@ -39,6 +38,9 @@ class HomeController extends AbstractController
                 'tableau'   =>  $tableau,
                 'personne'  =>  $objet,
                 'personnes' =>  $liste,
+                'test'      =>  0,
+                'tableau2'  =>  ['x', 'y'],
+                'test2'     =>  'azert',
             ]
         );
     }
