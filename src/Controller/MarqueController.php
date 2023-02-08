@@ -13,7 +13,18 @@ class MarqueController extends AbstractController
     #[Route('/', name: "marque_liste")]
     public function index(): Response
     {
-        return $this->render('marque/liste.html.twig');
+
+        $marques = [
+            ['id' => 1, 'nom' => 'Fiat'],
+            ['id' => 2, 'nom' => 'Ford'],
+            ['id' => 3, 'nom' => 'BMW'],
+            ['id' => 4, 'nom' => 'Tesla'],
+            ['id' => 5, 'nom' => 'Audi'],
+        ];
+
+        return $this->render('marque/liste.html.twig', [
+            'marques' => $marques,
+        ]);
     }
 
     #[Route('/new', name: "marque_new")]
