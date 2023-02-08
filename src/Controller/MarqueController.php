@@ -2,45 +2,40 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/marques')]
 class MarqueController
 {
-    public function index()
+
+    #[Route('/', name: "marque_liste")]
+    public function index(): Response
     {
-        return new Response('<h1>Liste des marques</h1>');
+        return new Response('Liste des marques');
     }
 
-    public function new()
+    #[Route('/new', name: "marque_new")]
+    public function new(): Response
     {
-        dd('Ajout d\'une marque');
+        return new Response('Nouvelle marque');
     }
 
-    public function show(Request $req): Response
+    #[Route('/{slug}', requirements: ['slug' => '[a-z-]+'], name: "marque_show")]
+    public function show(string $slug): Response
     {
-        $marque = $req->attributes->get('slug');
-        return new Response('Affichage de la marque : ' . $marque);
+        return new Response('Détails marque ' . $slug);
     }
 
-    public function delete(Request $request): Response
+    #[Route('/modify/{slug}', requirements: ['slug' => '[a-z-]+'], name: "marque_modify")]
+    public function modify(string $slug): Response
     {
-        $marque = $request->attributes->get('slug');
-        return new Response('Suppression de la marque : ' . $marque);
+        return new Response('Modification marque ' . $slug);
     }
 
-    // #[Route('/marques/update/{slug}', defaults: ['slug' => 'BMW'], requirements: ['slug' => '[a-z-]{3,32}'], methods: ['GET', 'POST'], name: 'marque_update')]
-
-    // #[Route('/marques/update/{slug}', requirements: ['slug' => '[a-z-]{3,32}'], methods: ['GET', 'POST'], name: 'marque_update')]
-    // public function update(string $slug = 'BMW')
-    // {
-    //     return new Response('Modification de la marque : ' . $slug);
-    // }
-
-    #[Route('/marques/update/{id}', requirements: ['id' => '\d{1,10}'], methods: ['GET', 'POST'], name: 'marque_update')]
-    public function update(int $id = 0)
+    #[Route('/delete/{slug}', requirements: ['slug' => '[a-z-]+'], name: "marque_delete")]
+    public function delete(string $slug): Response
     {
-        return new Response('Modification de la marque : ' . $id);
+        return new Response('Suppression marque ' . $slug);
     }
 }

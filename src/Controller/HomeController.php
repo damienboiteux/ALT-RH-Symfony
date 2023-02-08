@@ -2,11 +2,15 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
 
 class HomeController
 {
-    public function index()
+    #[Route('/', name: "home")]
+    public function index(): Response
     {
-        dd('Page d\'accueil');
+        return new Response('Page d\'accueil');
     }
 }

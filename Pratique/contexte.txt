@@ -49,13 +49,32 @@ localhost/marques/bmw               : détails de la marque bmw
 localhost/marques/fiat/delete       : suppression de la marque fiat
 localhost/marques/fiat/update       : modification de la marque fiat
 
+
+
+
+
 1 Controller pour les véhicules : VehiculeController
 
-localhost/vehicules                 : index() ( ou liste())
-localhost/vehicules/new             : new() ou add() ou create()  
-localhost/vehicules/12              : show()
-localhost/vehicules/12/delete       : delete() ou remove()
-localhost/vehicules/12/update       : update() ou modify()
+localhost/vehicules                 : index()   
+localhost/vehicules/new             : new()     
+localhost/vehicules/{id}            : show()    
+localhost/vehicules/modify/{id}     : modify()
+localhost/vehicules/delete/{id}     : delete()
+
+id doit être numérique
+
+Dans la méthode : retourner une Response "Action" + id si pertinent
+
+- Liste des véhicules
+- Nouveau véhicule
+- Détails véhicule id
+- Modification véhicule id
+- Suppression véhicule id
+
+
+
+
+
 
 
 SLUG

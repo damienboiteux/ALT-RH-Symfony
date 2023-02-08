@@ -4,33 +4,60 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-home:
-    path: /
-    controller: App\Controller\HomeController::index
+# home:
+#     path: /
+#     controller: App\Controller\HomeController::index
 
-marques:
-    path: /marques
-    controller: App\Controller\MarqueController::index
+# marques:
+#     path: /marques
+#     controller: App\Controller\MarqueController::index
 
-marque_new:
-    path: /marques/new
-    controller: App\Controller\MarqueController::new
+# marque_new:
+#     path: /marques/new
+#     controller: App\Controller\MarqueController::new
 
-marque_supp:
-    path: /marques/delete/{slug<[a-z-]{3,32}>?BMW}
-    controller: App\Controller\MarqueController::delete
+# marque_supp:
+#     path: /marques/delete/{slug<[a-z-]{3,32}>?BMW}
+#     controller: App\Controller\MarqueController::delete
 
-marque_show:
-    path: /marques/show/{slug}
-    controller: App\Controller\MarqueController::show
-    defaults:
-        slug: BMW
-    requirements:
-        slug: '[a-z-]{3,32}'
-    methods: ['GET', 'POST']
+# marque_show:
+#     path: /marques/show/{slug}
+#     controller: App\Controller\MarqueController::show
+#     defaults:
+#         slug: BMW
+#     requirements:
+#         slug: '[a-z-]{3,32}'
+#     methods: ['GET', 'POST']
     # host: api.monsite.com
     # schemes: ['http','https']
 
-    
 
+# -------------------  Routes VEHICULES --------------------------
+# vehicule_liste:
+#     path: /vehicules
+#     controller: App\Controller\VehiculeController::index
 
+# vehicule_new:
+#     path: /vehicules/new
+#     controller: App\Controller\VehiculeController::new    
+
+# vehicule_show:
+#     path: /vehicules/{id}
+#     controller: App\Controller\VehiculeController::show
+#     requirements:
+#         # id: '[0-9]{1,10}'
+#         # id: '[0-9]{1,}'
+#         # id: '\d{1,}'
+#         id: '\d+'
+
+# vehicule_modify:
+#     path: /vehicules/modify/{id}
+#     controller: App\Controller\VehiculeController::modify
+#     requirements:
+#         id: '\d+'
+
+# vehicule_delete:
+#     path: /vehicules/delete/{id}
+#     controller: App\Controller\VehiculeController::delete
+#     requirements:
+#         id: '\d+'
