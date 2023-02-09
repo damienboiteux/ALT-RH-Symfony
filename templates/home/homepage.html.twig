@@ -1,43 +1,50 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 {% block body %}
-    <h1>Page d'accueil avec TWIG</h1>
-    <p>Bienvenue sur ce site !</p>
-    <h2>{{ titre }}</h2>
-    <ul>
-    {% for ligne in tableau %}
-        <li>{{ ligne }}</li>
-    {% endfor %}
-    </ul>
+	<h1>Page d'accueil avec TWIG</h1>
+	<p>Bienvenue sur ce site !</p>
+	<h2>{{ titre }}</h2>
+	<ul>
+		{% for ligne in tableau %}
+			<li>{{ ligne }}</li>
+		{% endfor %}
+	</ul>
 
-    <p>Nom : {{ personne.nom | upper  }}</p>
-    <p>Prénom : {{ personne.prenom }}</p>
+	<p>Nom :
+		{{ personne.nom | upper  }}</p>
+	<p>Prénom :
+		{{ personne.prenom }}</p>
 
-    {% for ligne in personnes %}
-        <li>{{ ligne.login }} / {{ ligne.password}}</li>
-    {% endfor %}
+	{% for ligne in personnes %}
+		<li>{{ ligne.login }}
+			/
+			{{ ligne.password}}</li>
+	{% endfor %}
 
-    {% if test > 0 %}
-        <p>Ok</p>
-    {% else %}
-        <p>pas OK</p>
-    {% endif %}
+	{% if test > 0 %}
+		<p>Ok</p>
+	{% else %}
+		<p>pas OK</p>
+	{% endif %}
 
-    {% if tableau2 is empty %}
-    <p>Le tableau est vide</p>
-    {% else %} 
-        <ul>
-            {% for ligne in tableau2 %}
-                <li>{{ ligne }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+	{% if tableau2 is empty %}
+		<p>Le tableau est vide</p>
+	{% else %}
+		<ul>
+			{% for ligne in tableau2 %}
+				<li>{{ ligne }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
 
-    {% if test2 is defined %}
-    <p>{{ test2 }}</p>
-    {% else %}
-    <p>La variable n'est pas définie</p>
-    {% endif %}
+	{% if test2 is defined %}
+		<p>{{ test2 }}</p>
+	{% else %}
+		<p>La variable n'est pas définie</p>
+	{% endif %}
 {% endblock %}
+
+{#  #}
