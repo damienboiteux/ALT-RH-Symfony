@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	{{ employe.prenom}}
+	{{employe.nom}}
+{% endblock %}
+
+{% block body %}
+
+	<div>
+		<p>Prénom :
+			{{ employe.prenom }}</p>
+		<p>Nom :
+			{{ employe.nom }}</p>
+	</div>
+
+	<a href="{{path('employe_liste') }}" class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

@@ -22,6 +22,9 @@ class Marque
     #[ORM\Column(length: 4, nullable: true)]
     private ?string $creation = null;
 
+    #[ORM\Column(length: 32)]
+    private ?string $slug = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Marque
     public function setCreation(?string $creation): self
     {
         $this->creation = $creation;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

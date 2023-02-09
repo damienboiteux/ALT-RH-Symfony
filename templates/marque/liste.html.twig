@@ -16,7 +16,7 @@
 				<tr>
 					<th>#</th>
 					<th>Nom</th>
-					{# <th>Slug</th> #}
+					<th>Pays</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -25,7 +25,7 @@
 					<tr>
 						<td>{{ marque.id }}</td>
 						<td>{{ marque.nom }}</td>
-						{# <td>{{ marque.slug }}</td> #}
+						<td>{{ marque.pays }}</td>
 						<td>
 							<a class="btn btn-success" href="{{ path('marque_show', {slug: marque.slug }) }}">Détails</a>
 
