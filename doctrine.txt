@@ -1,0 +1,8 @@
+1 - symfony console make:entity 
+2 - répondre aux questions
+3 -> classe qui "décrit/correspond" à la table de la base de données
+4 - symfony console make:migration
+5 - crée le fichier de migration (requêtes SQL) 
+6 - symfony console doctrine:migrations:migrate 
+7 - exécute les requêtes SQL du/des fichiers de migration
+8 - la BDD est à jour !!!
