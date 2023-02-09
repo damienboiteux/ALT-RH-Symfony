@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{% if marque.nom is defined %}
+		{{ marque.nom }}
+	{% else %}
+		Marque inconnue
+	{% endif %}
+{% endblock %}
+{% block body %}
+	{% if marque is not empty %}
+		<div>
+			<p>Id :
+				{{ marque.id}}</p>
+			<p>Slug :
+				{{ marque.slug}}</p>
+			<p>Nom :
+				{{ marque.nom}}</p>
+		</div>
+	{% else %}
+		<p class="alert alert-danger">Marque inconnue</p>
+	{% endif %}
+	<a href="{{ path('marque_liste')}}" class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

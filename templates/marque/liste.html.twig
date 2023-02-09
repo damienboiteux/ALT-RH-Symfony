@@ -1,37 +1,45 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Marques{% endblock %}
+{% block title %}Marques
+{% endblock %}
 
 {% block body %}
 
-    <h1>Liste des marques</h1>
+	<h1>Liste des marques</h1>
 
-    {% if marques is empty %}
-        <p class="alert alert-danger">Aucune marque trouvée</p>
-    {% else %}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nom</th>
-                    {# <th>Slug</th> #}
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for marque in marques %}
-                    <tr>
-                        <td>{{ marque.id }}</td>
-                        <td>{{ marque.nom }}</td>
-                        {# <td>{{ marque.slug }}</td> #}
-                        <td><a class="btn btn-warning" href="{{ path('marque_modify', {slug: marque.slug }) }}">Modifier</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
+	{% if marques is empty %}
+		<p class="alert alert-danger">Aucune marque trouvée</p>
+	{% else %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nom</th>
+					{# <th>Slug</th> #}
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for marque in marques %}
+					<tr>
+						<td>{{ marque.id }}</td>
+						<td>{{ marque.nom }}</td>
+						{# <td>{{ marque.slug }}</td> #}
+						<td>
+							<a class="btn btn-success" href="{{ path('marque_show', {slug: marque.slug }) }}">Détails</a>
+						</td>
+						<td>
+							<a class="btn btn-warning" href="{{ path('marque_modify', {slug: marque.slug }) }}">Modifier</a>
+						</td>
+						<td>
+							<a class="btn btn-danger" href="{{ path('marque_delete', {slug: marque.slug }) }}">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
 
-    <a class="btn btn-primary mt-4" href="{{ path('marque_new') }}">Ajouter une marque</a>
+	<a class="btn btn-primary mt-4" href="{{ path('marque_new') }}">Ajouter une marque</a>
 
 {% endblock %}
-
