@@ -28,11 +28,9 @@
 						{# <td>{{ marque.slug }}</td> #}
 						<td>
 							<a class="btn btn-success" href="{{ path('marque_show', {slug: marque.slug }) }}">Détails</a>
-						</td>
-						<td>
+
 							<a class="btn btn-warning" href="{{ path('marque_modify', {slug: marque.slug }) }}">Modifier</a>
-						</td>
-						<td>
+
 							<a class="btn btn-danger" onclick="return confirm('Confirmez-vous ?')" href="{{ path('marque_delete', {slug: marque.slug }) }}">Supprimer</a>
 						</td>
 					</tr>
