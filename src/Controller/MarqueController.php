@@ -55,12 +55,22 @@ class MarqueController extends AbstractController
     #[Route('/modify/{slug}', requirements: ['slug' => '[a-z-]+'], name: "marque_modify")]
     public function modify(string $slug): Response
     {
-        return new Response('Modification marque ' . $slug);
+        return $this->render('marque/modify.html.twig', [
+            'slug' => $slug,
+        ]);
     }
 
     #[Route('/delete/{slug}', requirements: ['slug' => '[a-z-]+'], name: "marque_delete")]
     public function delete(string $slug): Response
     {
-        return new Response('Suppression marque ' . $slug);
+        // Suppression dans la base de données
+
+        // Message
+        $this->addFlash('success', 'Marque supprimée');
+
+        // Redirection vers la liste des marques
+        return $this->redirectToRoute('marque_liste');
+
+        // return new Response('Suppression marque ' . $slug);
     }
 }

@@ -5,6 +5,7 @@
 
 {% block body %}
 
+
 	<h1>Liste des marques</h1>
 
 	{% if marques is empty %}
@@ -32,7 +33,7 @@
 							<a class="btn btn-warning" href="{{ path('marque_modify', {slug: marque.slug }) }}">Modifier</a>
 						</td>
 						<td>
-							<a class="btn btn-danger" href="{{ path('marque_delete', {slug: marque.slug }) }}">Supprimer</a>
+							<a class="btn btn-danger" onclick="return confirm('Confirmez-vous ?')" href="{{ path('marque_delete', {slug: marque.slug }) }}">Supprimer</a>
 						</td>
 					</tr>
 				{% endfor %}
